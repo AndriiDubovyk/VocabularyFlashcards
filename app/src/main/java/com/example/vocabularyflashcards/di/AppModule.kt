@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.example.vocabularyflashcards.feature_vocabulary.data.local.FlashcardDatabase
 import com.example.vocabularyflashcards.feature_vocabulary.data.repository.FlashcardRepositoryImpl
 import com.example.vocabularyflashcards.feature_vocabulary.domain.repository.FlashcardRepository
+import com.example.vocabularyflashcards.feature_vocabulary.domain.use_case.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,6 +30,17 @@ object AppModule {
     @Singleton
     fun provideFlashcardRepository(db: FlashcardDatabase): FlashcardRepository {
         return FlashcardRepositoryImpl(db.flashcardDao)
+    }
+
+    @Provides
+    @Singleton
+    fun provideFlashcardUseCases(repository: FlashcardRepository): FlashcardUseCases {
+        return FlashcardUseCases(
+            addFlashcard = AddFlashcard(repository),
+            deleteFlashcard = DeleteFlashcard(repository),
+            getFlashcard = GetFlashcard(repository),
+            getFlashcards = GetFlashcards(repository)
+        )
     }
 
 }
