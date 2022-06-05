@@ -9,7 +9,7 @@ class GetFlashcards(
 ) {
 
     operator fun invoke(): Flow<List<Flashcard>> {
-        return repository.getFlashcard()
+        return repository.getFlashcards()
     }
 
 }

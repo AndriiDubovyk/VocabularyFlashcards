@@ -9,7 +9,7 @@ class FlashcardRepositoryImpl(
     private val dao: FlashcardDao
 ): FlashcardRepository {
 
-    override fun getFlashcard(): Flow<List<Flashcard>> {
+    override fun getFlashcards(): Flow<List<Flashcard>> {
         return dao.getFlashcards()
     }
 

@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface FlashcardRepository {
 
-    fun getFlashcard(): Flow<List<Flashcard>>
+    fun getFlashcards(): Flow<List<Flashcard>>
 
     suspend fun getFlashcardById(id: Int): Flashcard?
 
