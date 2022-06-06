@@ -4,4 +4,6 @@ import com.example.vocabularyflashcards.feature_vocabulary.domain.model.Flashcar
 
 sealed class FlashcardListEvent {
     data class DeleteFlashcard(val flashcard: Flashcard): FlashcardListEvent()
+    data class OnFlashcardClick(val flashcard: Flashcard): FlashcardListEvent()
+    object OnAddFlashcardClick: FlashcardListEvent()
 }
