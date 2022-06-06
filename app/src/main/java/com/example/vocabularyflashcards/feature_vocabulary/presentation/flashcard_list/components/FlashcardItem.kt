@@ -27,7 +27,7 @@ fun FlashcardItem(
 
     Card(
         shape = RoundedCornerShape(15.dp),
-        modifier = Modifier.
+        modifier = modifier.
             width(180.dp),
         elevation = 10.dp
     ) {
